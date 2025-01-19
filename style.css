@@ -373,6 +373,7 @@ body {
     padding: 5px 8px;
     font-size: 0.75rem;
     border-radius: 666px;
+    flex-shrink: 0;
 }
 
 .car-style:hover .person-wrapper .title-wrapper .select-btn {
@@ -516,6 +517,9 @@ body {
         width: 90%;
         margin: auto;
     }
+    .private-ride-title{
+        text-align: center;
+    }
 
     .select-ride .content-wrapper {
         flex-direction: column;
@@ -542,6 +546,7 @@ body {
 }
 
 @media (max-width:575px) {
+   
     .ride-wrapper .one-way-trip {
         display: none;
     }

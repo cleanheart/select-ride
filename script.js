@@ -4,7 +4,7 @@ let isButtonHidden = false;
 $(window).on("scroll", function () {
     const currentScroll = $(this).scrollTop();
 
-    if (currentScroll > 250) { 
+    if (currentScroll > 500) { 
         if (currentScroll > lastScrollTop && !isButtonHidden) {
             // নিচে স্ক্রল করলে বাটন হাইড হবে
             $("#sticky-btn-wrapper").removeClass("show").addClass("hide");
