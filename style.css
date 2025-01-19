@@ -124,6 +124,14 @@ body {
     color: #fff;
     background-color: #146AFF;
     border-radius: 666px;
+    transition: 0.3s;
+
+
+}
+
+.one-way-trip .one-way-btn:hover {
+    color: #146AFF;
+    background-color: #F2F4F8;
 }
 
 .one-way-title-wrapper {
@@ -177,7 +185,13 @@ body {
     background-color: #F2F4F8;
     border-radius: 666px;
     clip-path: 666px;
+    transition: 0.3s;
 
+}
+
+.route-btn:hover {
+    color: #F2F4F8;
+    background-color: #146AFF;
 }
 
 .one-way-Departure {
@@ -266,7 +280,13 @@ body {
     font-weight: 600;
     background-color: transparent;
     color: rgb(20, 106, 255);
+    transition: 0.3s;
 
+
+}
+
+.private-ride .sub-title:hover {
+    background: #F2F4F8;
 
 }
 
@@ -491,6 +511,7 @@ body {
     .sticky-btn-wrapper {
         width: 100%;
     }
+
     .sticky-btn-wrapper .btn-wrapper {
         width: 90%;
         margin: auto;
