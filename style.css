@@ -1,27 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+body {
+    padding-bottom: 1000px;
+}
+
 .select-ride {
     color: #171D21;
     font-family: "Inter", serif;
     background: rgb(242, 244, 248);
-    height: auto;
-    min-height: 100vh;
+    /* height: 100vh; */
 }
-@keyframes custom-fadeInUp {
+
+.select-ride .container {
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+
+}
+
+
+
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translate3d(0, 100%, 0);
+        transform: translateY(100%);
     }
+
     to {
         opacity: 1;
-        transform: translate3d(0, 0, 0);
+        transform: translateY(0);
     }
 }
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
 .sticky-btn-wrapper {
     position: fixed;
-    width: 666px;
-    bottom: 0%; 
-    left: 5%;
+    width: 100%;
+    bottom: 0%;
+    left: 0;
+    transition: bottom 0.5s ease-in-out;
+}
+
+.sticky-btn-wrapper .btn-wrapper {
+    width: 655px;
     padding: 1rem;
     background: rgb(255, 255, 255);
     border-top: 1px solid rgb(242, 244, 248);
@@ -31,13 +63,20 @@
     border-bottom: none;
     border-radius: 1rem 1rem 0px 0px;
     box-shadow: rgba(18, 22, 25, 0.1) 0px 0px 24px 0px;
-    transition: bottom 0.5s ease-in-out;
+
 }
-.sticky-btn-wrapper.sticky {
-    bottom: 0; /* ক্লাস যুক্ত হলে এটি উপরে আসবে */
-    animation: 0.5s custom-fadeInUp;
+
+.sticky-btn-wrapper.hide {
+    transform: translateY(100%);
+    opacity: 0;
 }
-.sticky-btn-wrapper button{
+
+.sticky-btn-wrapper.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.sticky-btn-wrapper button {
     padding: .9375rem 1.25rem;
     width: 100%;
     background: #146AFF;
@@ -48,32 +87,13 @@
     font-size: 1.125rem;
     cursor: pointer;
     transition: 0.3s;
-
-}
-.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    -webkit-animation: 1s custom-fadeInDown;
-    animation: 1s custom-fadeInDown;
-    background-color: var(--base-white-color);
-    -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.sticky-btn-wrapper button:hover{
+.sticky-btn-wrapper button:hover {
     background: #146affd7;
 
 }
 
-.select-ride .container {
-    max-width: 1200px;
-    margin: auto;
-    position: relative;
-
-}
 
 .select-ride .content-wrapper {
     display: flex;
@@ -83,6 +103,7 @@
 .ride-wrapper {
     display: flex;
     flex-direction: column;
+    /* margin-bottom: 300px; */
 }
 
 .ride-wrapper .one-way-trip {
@@ -460,16 +481,21 @@
     .private-ride {
         width: 500px;
     }
+
+    .sticky-btn-wrapper .btn-wrapper {
+        width: 510px;
+    }
 }
 
 @media(max-width:920px) {
-.sticky-btn-wrapper {
-    
-    width: 90%;
-    
-    left: 50%;
-    transform: translate(-50%);
-}
+    .sticky-btn-wrapper {
+        width: 100%;
+    }
+    .sticky-btn-wrapper .btn-wrapper {
+        width: 90%;
+        margin: auto;
+    }
+
     .select-ride .content-wrapper {
         flex-direction: column;
         gap: 25px;
