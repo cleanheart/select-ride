@@ -9,7 +9,7 @@ body {
     font-family: "Inter", serif;
     background: rgb(242, 244, 248);
     /* height: 100vh; */
-        padding-bottom: 40px;
+        padding: 40px 0;
 }
 
 .select-ride .container {
