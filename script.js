@@ -16,4 +16,31 @@ $(window).on("scroll", function () {
         }
     }
     lastScrollTop = currentScroll; // বর্তমান স্ক্রল পজিশন সংরক্ষণ
+
 });
+
+// Selected item Toggle class
+const selectItem = document.querySelector('#listSelected_item').children;
+const getValue = document.querySelector('#getValue');
+
+for (let item of selectItem) {
+    item.addEventListener('click', function () {
+        // Remove 'active' class from all items first
+        for (let sibling of selectItem) {
+            sibling.classList.remove('active');
+        }
+
+        // Add 'active' class to the clicked item
+        item.classList.add('active');
+        
+        // Find the element with the class 'prize-1'
+        let priceElement = item.querySelector('.prize-1');
+        
+        let priceValue;
+        priceValue = priceElement.textContent;
+        
+        // Display the value in the #getValue element
+        getValue.innerHTML = priceValue;
+      
+    });
+}
